@@ -4,13 +4,13 @@
 1.	Dhruvi Bavaria (002767470)
 2.	Avani Kala (002772623)
 
-The aim of developing the ‘Blood Donation and Requirement System’ database is to keep a track of acceptors and donors in blood banks. This database will be useful to person who is in requirement of blood. Hospitals will also be able to take advantage of this database in case of blood need and contact respective blood banks. 
+The aim of developing the ‘Blood Donation and Requirement System’ database is to keep a track of acceptors and donors in blood banks. This database will be useful to person who is in requirement of blood. Hospitals will also be able to take advantage of this database in case of blood need and contact respective blood banks. Hospitals will be able to request blood banks for blood requirements. 
 
 **Initial Tables and their attributes:**
 
 •	Person: Person_id, firstname, lastname, address, zipcode, contact
 
-•	Donors: donor_id, pid, blood_type, weight, height, gender, DonationDate, AmountDonated, BloodBankID
+•	Donors: donor_id, pid, blood_type, weight, height, gender, Eligibility, DonationDate, AmountDonated, BloodBankID
 
 •	Patients: patient_id, pid, blood_type, Weight, Height, Transfusion Date, BloodBankID
 
@@ -19,6 +19,11 @@ The aim of developing the ‘Blood Donation and Requirement System’ database i
 •	BloodBank: BloodBank_id, Name, Address, Contact, Email, operating_hours
 
 •	BloodBags: BBID, blood_bank_id , BloodType, Quantity
+
+•	Hospital : HospitalID, Name, Address, City, Zipcode, Contact.
+
+•	Requests: RequestID, HospitalID, BloodBank_id, RequestedDate, Priority, RequestedBloodBag, RequestStatus.
+
 
 **Explanation of Tables:**
 
@@ -34,4 +39,9 @@ The BloodBanks table contains information of Blood banks location and it’s oth
 
 The BloodBags table contains information regarding availability of blood at particular Blood Bank.
 
-**End users:** Person requiring blood, hospitals.
+The Hospital table contains information regarding all hospitals in Massachusetts. 
+
+The Request table contains information of hospital requests made to blood bank for blood requirements.
+
+**End users:** Person requiring blood, Person who wants to donate blood, hospitals.
+
